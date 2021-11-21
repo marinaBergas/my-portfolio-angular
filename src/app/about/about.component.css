@@ -1,0 +1,17 @@
+.about-section {
+  padding: 100px 0;
+}
+
+.img-wrap {
+  position: relative;
+}
+.img-wrap::before {
+  z-index: -1;
+  right: 0;
+  transform: translate(40%, -20%);
+  position: absolute;
+  content: "";
+  width: 304px;
+  height: 264px;
+  background: url(../../assets/dotsImage.png) right top;
+}
