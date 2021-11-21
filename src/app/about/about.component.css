@@ -15,3 +15,16 @@
   height: 264px;
   background: url(../../assets/dotsImage.png) right top;
 }
+.about-section h2 {
+  font-size: 2rem;
+}
+.about-section p {
+  color: #939393;
+}
+.progress {
+  height: 0.5rem;
+}
+.progress-bar {
+  background-color: #96bb7c;
+  position: relative;
+}
