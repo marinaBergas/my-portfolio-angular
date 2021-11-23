@@ -1,0 +1,39 @@
+<section class="our-services">
+  <div class="container">
+    <div
+      class="
+        our-services-header
+        row
+        text-center
+        col-md-12
+        mb-5
+        aos-init aos-animate
+      "
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="800"
+    >
+      <h2 class="text-capitalize">services</h2>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 aos-init aos-animate"
+        *ngFor="let ourService of ourServices; index as i"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="200 + 100 * i"
+        data-aos-duration="800"
+      >
+        <div class="our-services-item text-center">
+          <span class="icon">
+            <fa-icon
+              [icon]="i === 0 ? faDesktop : i === 1 ? faBinoculars : faCartPlus"
+              class="cart-icon"
+            ></fa-icon>
+          </span>
+          <h3>{{ ourService.header }}</h3>
+          <p>{{ ourService.paragraph }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

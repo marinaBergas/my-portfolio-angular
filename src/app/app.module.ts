@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OurServicesComponent } from './our-services/our-services.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     PortfolioComponent,
     NotFoundComponent,
+    OurServicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NgxPageScrollCoreModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
