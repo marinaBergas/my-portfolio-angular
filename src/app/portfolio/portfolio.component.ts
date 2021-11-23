@@ -22,7 +22,6 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     Aos.init();
-
     this.projects = this.projectsService.projects;
   }
   onClickHandle(project: any) {
@@ -30,7 +29,6 @@ export class PortfolioComponent implements OnInit {
   }
   allHandle() {
     this.projects = this.projectsService.projects;
-    console.log('ff', this.projects);
   }
   typeReactHandle() {
     this.projects = this.projectsService.projects;
@@ -39,7 +37,6 @@ export class PortfolioComponent implements OnInit {
       return el.filtration === 'react';
     });
     this.projects = this.reactProjects;
-    console.log('ff', this.projects);
   }
   typeAngularHandle() {
     this.projects = this.projectsService.projects;
@@ -47,7 +44,6 @@ export class PortfolioComponent implements OnInit {
       return el.filtration === 'angular';
     });
     this.projects = this.angularProjects;
-    console.log('ff', this.projects);
   }
   typeLandinaPageHandle() {
     this.projects = this.projectsService.projects;
@@ -55,6 +51,5 @@ export class PortfolioComponent implements OnInit {
       return el.filtration === 'landingPage';
     });
     this.projects = this.landingPageProjects;
-    console.log('ff', this.projects);
   }
 }

@@ -7,3 +7,11 @@ export interface ProjectValues {
   header: string;
   paragraph: string;
 }
+export interface workExperiences {
+  prevExperience: string;
+  workPlace: string;
+  location: string;
+  period: string;
+  periodCalenderStart: string;
+  periodCalenderEnd: string;
+}

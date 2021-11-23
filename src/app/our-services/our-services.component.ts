@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as Aos from 'aos';
-
 import {
   faCartPlus,
   faBinoculars,
@@ -12,9 +11,9 @@ import {
   styleUrls: ['./our-services.component.css'],
 })
 export class OurServicesComponent implements OnInit {
-  faCartPlus = faCartPlus;
-  faBinoculars = faBinoculars;
-  faDesktop = faDesktop;
+  public faCartPlus = faCartPlus;
+  public faBinoculars = faBinoculars;
+  public faDesktop = faDesktop;
   public ourServices = [
     {
       header: 'Development',
