@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,900;1,200;1,300;1,400;1,700&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+}
+a {
+  text-decoration: none !important;
+}

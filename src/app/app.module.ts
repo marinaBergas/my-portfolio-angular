@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     AboutComponent,
     HomeComponent,
+    PortfolioComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
