@@ -17,6 +17,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ResumeComponent } from './resume/resume.component';
 import { ClientsComponent } from './clients/clients.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ClientsComponent } from './clients/clients.component';
     OurServicesComponent,
     ResumeComponent,
     ClientsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
