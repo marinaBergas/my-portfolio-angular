@@ -6,8 +6,6 @@ import { Project } from '../models/interfaces';
   providedIn: 'root',
 })
 export class ProjectService {
-  // [x: string]: Project[];
-
   private _projectList: Project[] = [
     {
       id: 1,
