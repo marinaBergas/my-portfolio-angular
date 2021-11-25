@@ -3,23 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { OurServicesComponent } from './our-services/our-services.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { OurServicesComponent } from './components/our-services/our-services.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ResumeComponent } from './resume/resume.component';
-import { ClientsComponent } from './clients/clients.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
-import { BlogComponent } from './blog/blog.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [

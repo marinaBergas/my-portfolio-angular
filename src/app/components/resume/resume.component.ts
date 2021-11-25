@@ -5,7 +5,7 @@ import {
   faMapMarker,
   faCalendar,
 } from '@fortawesome/free-solid-svg-icons';
-import { educationValues, workExperiences } from '../shared/models/interfaces';
+import { Education, WorkExperiences } from '../../models/interfaces';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -18,7 +18,7 @@ export class ResumeComponent implements OnInit {
     faCalendarIcon: faCalendar,
   };
 
-  public experiences: workExperiences[] = [
+  public experiences: WorkExperiences[] = [
     {
       prevExperience: 'Front end developer',
       workPlace: 'orange labs',
@@ -28,7 +28,7 @@ export class ResumeComponent implements OnInit {
       periodCalenderEnd: 'present',
     },
   ];
-  public eductions: educationValues[] = [
+  public eductions: Education[] = [
     {
       education: 'diploma Front End Development Track ',
       educationPlace: 'information Technology Institute',

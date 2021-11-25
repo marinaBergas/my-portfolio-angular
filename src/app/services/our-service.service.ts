@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class OurServicesService {
-  public ourServices = [
+export class OurServiceService {
+  private _ourServiceList = [
     {
       id: 1,
       service: 'web design',
@@ -22,6 +22,9 @@ export class OurServicesService {
       service: 'front end',
     },
   ];
+  public get ourServiceList() {
+    return this._ourServiceList;
+  }
 
   constructor() {}
 }

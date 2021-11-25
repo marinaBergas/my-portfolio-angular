@@ -1,61 +1,66 @@
 import { Injectable } from '@angular/core';
 import { ProjectType } from '../models/enums';
+import { Project } from '../models/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProjectsService {
-  public projects = [
+export class ProjectService {
+  // [x: string]: Project[];
+
+  private _projectList: Project[] = [
     {
       id: 1,
-      logoimg: `../../assets/calmaLogo.png`,
-      filtration: ProjectType.react,
+      logoImg: `../../assets/calmaLogo.png`,
+      projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/Calma/#/'}`,
       imgscreenshot: `../../assets/calmascreenshot.png`,
-      header: 'Calma Psychological Website',
-      paragraph:
+      title: 'Calma Psychological Website',
+      description:
         ' A Psychological booking website built with React, Redux,Material-UI, and Firebase',
     },
     {
       id: 2,
-      logoimg: ``,
-      filtration: ProjectType.angular,
+      logoImg: ``,
+      projectType: ProjectType.angular,
       url: `${' https://marinabergas.github.io/shipment-service/'}`,
       imgscreenshot: `../../assets/services-screenshots.png`,
-      header: 'Shipment-service',
-      paragraph:
+      title: 'Shipment-service',
+      description:
         'Shipment-services website using react hooks,props ,i18 translate,rest api use react axios,you can check 7234258,6636255,9442984 and other',
     },
     {
       id: 3,
-      logoimg: ``,
-      filtration: ProjectType.react,
+      logoImg: ``,
+      projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/TodoList/'}`,
       imgscreenshot: `../../assets/TodoList-screenshot.png`,
-      header: 'Todo website app',
-      paragraph:
+      title: 'Todo website app',
+      description:
         'Todo website app using react fake api deploy with github use hooks ,props',
     },
     {
       id: 4,
-      logoimg: ``,
-      filtration: ProjectType.react,
+      logoImg: ``,
+      projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/post-leave-request/#/'}`,
       imgscreenshot: `../../assets/post-leave-request.png`,
-      header: 'Post Leave Request',
-      paragraph: 'post leave request website using,react,hooks,redux',
+      title: 'Post Leave Request',
+      description: 'post leave request website using,react,hooks,redux',
     },
     {
       id: 5,
-      logoimg: ``,
-      filtration: ProjectType.landingPage,
+      logoImg: ``,
+      projectType: ProjectType.landingPage,
       url: `${'https://marinabergas.github.io/map-feature/#/'}`,
       imgscreenshot: `../../assets/school-mapscreenshot.png`,
-      header: 'School map ',
-      paragraph:
+      title: 'School map ',
+      description:
         'react website  using leafletmap library carousel with javascript',
     },
   ];
-
+  public get projectList(): Project[] {
+    return this._projectList;
+  }
   constructor() {}
 }

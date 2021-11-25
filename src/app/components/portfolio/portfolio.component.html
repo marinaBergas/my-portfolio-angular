@@ -36,7 +36,7 @@
         data-aos="fade-up"
         data-aos-delay="200"
         (click)="onClickHandle(project)"
-        *ngFor="let project of projects"
+        *ngFor="let project of projectList"
       >
         <figure class="w-100 h-100">
           <div class="img-wrapper">
@@ -48,9 +48,9 @@
           </div>
 
           <div class="overLay-content">
-            <h3>{{ project.header }}</h3>
+            <h3>{{ project.title }}</h3>
             <p class="text-capitalize project-filteration">
-              {{ project.filtration }}
+              {{ project.projectType }}
             </p>
           </div>
         </figure>
