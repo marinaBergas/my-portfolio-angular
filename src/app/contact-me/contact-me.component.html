@@ -1,0 +1,105 @@
+<section class="contact-me-section">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-md-12 mb-5 aos-init aos-animate"
+        data-aos="fade-up "
+        data-aos-delay="100"
+      >
+        <div class="contact-me-header text-center">
+          <h2 class="text-capitalize">contact me</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-7 mb-5">
+        <form
+          class="form aos-init aos-animate"
+          data-aos="fade-up "
+          data-aos-delay="200"
+        >
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="firstName">First name</label>
+                <input type="text" id="firstName" class="form-control" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="lastName">Last name</label>
+                <input type="text" id="lastName" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="message">message</label>
+                <textarea
+                  name="message"
+                  class="form-control"
+                  id="message"
+                  cols="3"
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <button class="btn submit-btn" type="submit">send message</button>
+        </form>
+      </div>
+      <div
+        class="col-lg-4 contact-info-wrapper aos-init aos-animate"
+        data-aos="fade-up "
+        data-aos-delay="300"
+      >
+        <div class="row contact-info">
+          <div class="col-12">
+            <h3 class="mb-4 text-capitalize contact-info-header">
+              contact info
+            </h3>
+            <ul class="mb-3 p-0 m-0 contact-info-body">
+              <address>
+                <span class="text-black text-capitalize">
+                  <fa-icon
+                    class="contact-info-icon"
+                    [icon]="icons.faMapMarkerIcon"
+                  ></fa-icon>
+                  {{ contacts.address }}
+                </span>
+              </address>
+
+              <li class="mb-3 d-block">
+                <a href="tel:{{ contacts.phone }}">
+                  <fa-icon
+                    class="contact-info-icon"
+                    [icon]="icons.faPhoneIcon"
+                  ></fa-icon>
+                  <span>{{ contacts.phone }}</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="emailto:{{ contacts.email }}">
+                  <fa-icon
+                    class="contact-info-icon"
+                    [icon]="icons.faEnvelopeIcon"
+                  ></fa-icon>
+                  <span>{{ contacts.email }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

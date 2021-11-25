@@ -1,5 +1,8 @@
-.resume{
+.resume {
   padding: 70px 0;
+}
+.resume h2 {
+  font-size: 3rem;
 }
 .resume-item-workPlace {
   margin-right: 3rem;
@@ -7,6 +10,7 @@
 .period-wrapper {
   margin-left: auto;
 }
+
 .resume-item-period {
   font-size: 12px;
   font-weight: 700;
@@ -30,4 +34,7 @@
 .resume-item-workHistory {
   margin-right: 10px;
   color: #ccc;
+}
+.resume-icon {
+  margin-right: 10px;
 }

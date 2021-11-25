@@ -15,3 +15,13 @@ export interface workExperiences {
   periodCalenderStart: string;
   periodCalenderEnd: string;
 }
+export interface educationValues {
+  education: string;
+  educationPlace: string;
+  educationStart: string;
+  educationEnd: string;
+}
+export interface navigationServiceValues {
+  id: number;
+  service: string;
+}

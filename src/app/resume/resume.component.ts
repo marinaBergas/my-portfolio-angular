@@ -5,7 +5,7 @@ import {
   faMapMarker,
   faCalendar,
 } from '@fortawesome/free-solid-svg-icons';
-import { workExperiences } from '../shared/models/project-values';
+import { educationValues, workExperiences } from '../shared/models/interfaces';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -26,6 +26,14 @@ export class ResumeComponent implements OnInit {
       period: 'full time',
       periodCalenderStart: 'November2021',
       periodCalenderEnd: 'present',
+    },
+  ];
+  public eductions: educationValues[] = [
+    {
+      education: 'Diploma Front End Development Track ',
+      educationPlace: 'Information Technology Institute',
+      educationStart: 'JANUARY2021',
+      educationEnd: 'APRIL 2021',
     },
   ];
   constructor() {}

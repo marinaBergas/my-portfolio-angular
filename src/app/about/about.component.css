@@ -5,6 +5,7 @@
 .img-wrap {
   position: relative;
 }
+
 .img-wrap::before {
   z-index: -1;
   right: 0;
@@ -15,8 +16,11 @@
   height: 264px;
   background: url(../../assets/dotsImage.png) right top;
 }
-.about-section h2 {
-  font-size: 2rem;
+.about-header {
+  font-size: 3rem;
+}
+.skill-header {
+  font-size: 18px;
 }
 .about-section p {
   color: #939393;
@@ -46,4 +50,9 @@
 }
 .about-cv-btn {
   background-color: #939393;
+}
+@media (min-width: 992px) {
+  .img-wrap {
+    padding-right: 3rem;
+  }
 }

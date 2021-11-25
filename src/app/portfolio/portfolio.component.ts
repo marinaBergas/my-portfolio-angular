@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectsService } from '../shared/services/projects.service';
-import { ProjectValues } from '../shared/models/project-values';
+import { ProjectValues } from '../shared/models/interfaces';
 import * as Aos from 'aos';
 
 @Component({

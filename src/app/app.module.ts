@@ -18,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ResumeComponent } from './resume/resume.component';
 import { ClientsComponent } from './clients/clients.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { FooterComponent } from './footer/footer.component';
     ResumeComponent,
     ClientsComponent,
     FooterComponent,
+    ContactMeComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

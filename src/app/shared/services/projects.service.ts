@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProjectType } from '../models/project-type';
+import { ProjectType } from '../models/enums';
 
 @Injectable({
   providedIn: 'root',

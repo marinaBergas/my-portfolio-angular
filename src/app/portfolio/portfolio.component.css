@@ -1,3 +1,6 @@
+.projects-cards h2 {
+  font-size: 3rem;
+}
 .projects-cards-filter-body ul li {
   cursor: pointer;
   padding: 20px;

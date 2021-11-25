@@ -42,6 +42,6 @@
   font-style: italic;
 }
 .media-body-cite a {
-  color: #96bb7c;
+  color: #96bb7c !important;
   cursor: pointer;
 }
