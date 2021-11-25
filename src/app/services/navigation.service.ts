@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NavigationService {
-  public navigations = [
+  private _navigations = [
     {
       id: 1,
       service: 'HTML5',
@@ -26,5 +26,9 @@ export class NavigationService {
       service: 'javascript',
     },
   ];
+  public get navigations() {
+    return this._navigations;
+  }
+ 
   constructor() {}
 }

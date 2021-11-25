@@ -8,10 +8,9 @@ import {
   faDribbble,
   faPinterest,
 } from '@fortawesome/free-brands-svg-icons';
-import { navigationServiceValues } from '../shared/models/interfaces';
-import { NavigationService } from '../shared/services/navigation.service';
-import { OurServicesService } from '../shared/services/our-services.service';
-import { contacts } from '../shared/models/enums';
+import { navigationServiceValues } from '../../models/interfaces';
+import { NavigationService } from '../../services/navigation.service';
+import { OurServiceService } from '../../services/our-service.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -27,18 +26,18 @@ export class FooterComponent implements OnInit {
     faPinterest,
   ];
   public navigations: navigationServiceValues[] = [];
-  public ourServices: navigationServiceValues[] = [];
+  public ourServiceList: navigationServiceValues[] = [];
   public contacts = {
-    address: contacts.address,
-    email: contacts.email,
-    phone: contacts.phone,
+    address: 'alex',
+    email: 'marina.bergas@gmail.com',
+    phone: '+201272747752',
   };
   constructor(
     private navigationService: NavigationService,
-    private OurServicesService: OurServicesService
+    private OurServiceService: OurServiceService
   ) {
     this.navigations = this.navigationService.navigations;
-    this.ourServices = this.OurServicesService.ourServices;
+    this.ourServiceList = this.OurServiceService.ourServiceList;
   }
 
   ngOnInit(): void {

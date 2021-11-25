@@ -1,13 +1,13 @@
-export interface ProjectValues {
+export interface Project {
   id: number;
-  logoimg: string;
-  filtration: string;
+  logoImg: string;
+  projectType: string;
   url: string;
   imgscreenshot: string;
-  header: string;
-  paragraph: string;
+  title: string;
+  description: string;
 }
-export interface workExperiences {
+export interface WorkExperiences {
   prevExperience: string;
   workPlace: string;
   location: string;
@@ -15,7 +15,7 @@ export interface workExperiences {
   periodCalenderStart: string;
   periodCalenderEnd: string;
 }
-export interface educationValues {
+export interface Education {
   education: string;
   educationPlace: string;
   educationStart: string;
