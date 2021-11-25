@@ -8,14 +8,7 @@ import { PageScrollService } from 'ngx-page-scroll-core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
-  }
+  constructor() {}
 
   ngOnInit(): void {}
-  onScroll(target:any) {
-    this.pageScrollService.scroll({
-      document: this.document,
-      scrollTarget: target,
-    });
-  }
 }

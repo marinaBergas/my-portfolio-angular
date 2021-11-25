@@ -34,6 +34,9 @@
 .nav-link-dark-color {
   color: #000 !important;
 }
+.active {
+  color: #96bb7c !important;
+}
 .scroll {
   background-color: #fff !important;
 }

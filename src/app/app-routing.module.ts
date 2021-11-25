@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   // { path: '/portfolio/:id', component: PortfolioComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
