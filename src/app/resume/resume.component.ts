@@ -24,16 +24,16 @@ export class ResumeComponent implements OnInit {
       workPlace: 'orange labs',
       location: 'cairo',
       period: 'full time',
-      periodCalenderStart: 'November2021',
+      periodCalenderStart: 'november2021',
       periodCalenderEnd: 'present',
     },
   ];
   public eductions: educationValues[] = [
     {
-      education: 'Diploma Front End Development Track ',
-      educationPlace: 'Information Technology Institute',
-      educationStart: 'JANUARY2021',
-      educationEnd: 'APRIL 2021',
+      education: 'diploma Front End Development Track ',
+      educationPlace: 'information Technology Institute',
+      educationStart: 'january2021',
+      educationEnd: 'april 2021',
     },
   ];
   constructor() {}
