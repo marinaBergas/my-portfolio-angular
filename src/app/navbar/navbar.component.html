@@ -29,11 +29,23 @@
         [class]="navbarCollapsed ? '' : 'navbarItemsCollapsed'"
       >
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Home</a
+          >
         </li>
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
+            [ngClass]="
+              scrollNavbar
+                ? 'nav-link nav-link-dark-color dropdown-toggle'
+                : 'nav-link'
+            "
             href="#"
             id="navbarDropdown"
             role="button"
@@ -51,26 +63,59 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
             (click)="scrollToAbout()"
             routerLinkActive="active"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
             >About</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Portfolio</a>
+          <a
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Portfolio</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Services</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Resume</a>
+          <a
+            class="nav-link"
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Resume</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Blog</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a
+            href="#"
+            [ngClass]="
+              scrollNavbar ? 'nav-link nav-link-dark-color' : 'nav-link'
+            "
+            >Contact</a
+          >
         </li>
       </ul>
     </div>

@@ -31,11 +31,14 @@
   z-index: 100;
   position: relative;
 }
+.nav-link-dark-color {
+  color: #000 !important;
+}
 .scroll {
   background-color: #fff !important;
 }
 .logo-dark-color {
   color: #000 !important;
-  border-color:  #000;
+  border-color: #000;
   margin: 0;
 }

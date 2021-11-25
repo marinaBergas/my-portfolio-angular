@@ -19,16 +19,19 @@ export class NavbarComponent {
     this.scroll.emit(true);
   }
   constructor() {}
-
+  public scrollNavbar: boolean = false;
   ngAfterContentInit() {
     (() => {
       let nav = document.getElementById('navbar') as HTMLElement;
       let logo = document.querySelector('.logo') as HTMLElement;
+
       window.addEventListener('scroll', () => {
         if (window.scrollY > 35) {
+          this.scrollNavbar = true;
           nav.classList.add('scroll');
           logo.classList.add('logo-dark-color');
         } else {
+          this.scrollNavbar = false;
           nav.classList.remove('scroll');
           logo.classList.remove('logo-dark-color');
         }
