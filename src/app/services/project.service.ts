@@ -9,10 +9,10 @@ export class ProjectService {
   private _projectList: Project[] = [
     {
       id: 1,
-      logoImg: `../../../assets/calmaLogo.png`,
+      logoImg: `../../assets/calmaLogo.png`,
       projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/Calma/#/'}`,
-      imgscreenshot: `../../../assets/calmascreenshot.png`,
+      imgscreenshot: `../../assets/calmascreenshot.png`,
       title: 'Calma Psychological Website',
       description:
         ' A Psychological booking website built with React, Redux,Material-UI, and Firebase',
@@ -32,7 +32,7 @@ export class ProjectService {
       logoImg: ``,
       projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/TodoList/'}`,
-      imgscreenshot: `../../../assets/TodoList-screenshot.png`,
+      imgscreenshot: `../../assets/TodoList-screenshot.png`,
       title: 'Todo website app',
       description:
         'Todo website app using react fake api deploy with github use hooks ,props',
@@ -42,7 +42,7 @@ export class ProjectService {
       logoImg: ``,
       projectType: ProjectType.react,
       url: `${'https://marinabergas.github.io/post-leave-request/#/'}`,
-      imgscreenshot: `../../../assets/post-leave-request.png`,
+      imgscreenshot: `../../assets/post-leave-request.png`,
       title: 'Post Leave Request',
       description: 'post leave request website using,react,hooks,redux',
     },
@@ -51,7 +51,7 @@ export class ProjectService {
       logoImg: ``,
       projectType: ProjectType.landingPage,
       url: `${'https://marinabergas.github.io/map-feature/#/'}`,
-      imgscreenshot: `../../../assets/school-mapscreenshot.png`,
+      imgscreenshot: `../../assets/school-mapscreenshot.png`,
       title: 'School map ',
       description:
         'react website  using leafletmap library carousel with javascript',
