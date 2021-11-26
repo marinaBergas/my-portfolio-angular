@@ -22,7 +22,7 @@ export class ProjectService {
       logoImg: ``,
       projectType: ProjectType.angular,
       url: `${' https://marinabergas.github.io/shipment-service/'}`,
-      imgscreenshot: `../assets/services-screenshots.png`,
+      imgscreenshot: `assets/services-screenshots.png`,
       title: 'Shipment-service',
       description:
         'Shipment-services website using react hooks,props ,i18 translate,rest api use react axios,you can check 7234258,6636255,9442984 and other',
