@@ -10,7 +10,7 @@ import * as Aos from 'aos';
   styleUrls: ['./portfolio.component.css'],
 })
 export class PortfolioComponent implements OnInit {
-  public projectList: Project[] = [];
+  public projectList: any = [];
   public reactProjects: Project[] = [];
   public angularProjects: Project[] = [];
   public landingPageProjects: Project[] = [];
@@ -20,6 +20,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     Aos.init();
     this.projectList = this.projectService.projectList;
+    // this.projectList = this.projectService.fetchProject();
   }
   onClickHandle(project: any) {
     this.route.navigate(['portfolio', { id: project.id }]);
@@ -31,7 +32,7 @@ export class PortfolioComponent implements OnInit {
     this.projectList = this.projectService.projectList;
 
     this.reactProjects = this.projectList.filter((el: Project) => {
-      return el.projectType === 'react';
+      return el.projectType === 'ProjectType.react';
     });
     this.projectList = this.reactProjects;
   }

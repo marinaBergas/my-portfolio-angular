@@ -1,11 +1,12 @@
 export interface Project {
-  id: number;
-  logoImg: string;
-  projectType: string;
-  url: string;
-  imgscreenshot: string;
+  _id: string;
   title: string;
   description: string;
+  logoImg: string;
+  imgscreenshot: string;
+  url: string;
+  projectType: string;
+  __v: number;
 }
 export interface WorkExperiences {
   prevExperience: string;

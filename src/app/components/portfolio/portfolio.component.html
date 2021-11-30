@@ -10,7 +10,7 @@
         data-aos="fade-up"
         data-aos-delay="0"
       >
-        my portfolio
+        {{ "PORTFOLIO.MY PORTFOLIO" | translate }}
       </h2>
       <div class="projects-cards-filter-body d-flex justify-content-center">
         <ul
@@ -18,7 +18,9 @@
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <li class="text-capitalize" (click)="allHandle()">all</li>
+          <li class="text-capitalize" (click)="allHandle()">
+            {{ "PORTFOLIO.ALL" | translate }}
+          </li>
           <li class="text-capitalize" (click)="typeReactHandle()">react</li>
           <li class="text-capitalize" (click)="typeAngularHandle()">angular</li>
           <li class="text-capitalize" (click)="typeLandinaPageHandle()">

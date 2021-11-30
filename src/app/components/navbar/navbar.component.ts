@@ -5,6 +5,8 @@ import {
   HostListener,
   Inject,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +20,12 @@ export class NavbarComponent {
   // scrollToAbout() {
   //   this.scroll.emit(true);
   // }
-  constructor() {}
+  constructor(public translate: TranslateService, private router: Router) {
+    translate.addLangs(['en', 'ar']);
+    translate.setDefaultLang('en');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang?.match(/en|ar/) ? browserLang : 'en');
+  }
   public scrollNavbar: boolean = false;
   public activeLink: string = '';
   ngAfterContentInit() {
@@ -69,6 +76,10 @@ export class NavbarComponent {
   toContact() {
     this.activeLink = 'contact';
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  }
+  toSignIn() {
+    this.activeLink = 'signIn';
+    this.router.navigate(['sign-in']);
   }
   ngOnInit(): void {}
 }

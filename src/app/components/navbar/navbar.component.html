@@ -41,10 +41,10 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Home</a
+            >{{ "NAVBAR.HOMELINK" | translate }}</a
           >
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a
             [ngClass]="
               scrollNavbar
@@ -65,7 +65,7 @@
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a
             (click)="toAbout()"
@@ -77,7 +77,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >About</a
+            >{{ "NAVBAR.ABOUTLINK" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -90,7 +90,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Portfolio</a
+            >{{ "NAVBAR.PORTFOLIOLINK" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -103,7 +103,7 @@
                 ? ' nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Services</a
+            >{{ "NAVBAR.SERVICELINK" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -117,7 +117,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Resume</a
+            >{{ "NAVBAR.RESUMELINK" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -130,7 +130,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Blog</a
+            >{{ "NAVBAR.BLOGLINK" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -143,8 +143,34 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             "
-            >Contact</a
+            >{{ "NAVBAR.CONTACTLINK" | translate }}</a
           >
+        </li>
+        <li class="nav-item">
+          <a
+            (click)="toSignIn()"
+            [routerLink]="['sign-in']"
+            [ngClass]="
+              scrollNavbar && activeLink === 'signIn'
+                ? 'nav-link nav-link-dark-color active'
+                : scrollNavbar
+                ? 'nav-link nav-link-dark-color '
+                : 'nav-link'
+            "
+            >{{ "NAVBAR.SIGNINLINK" | translate }}</a
+          >
+        </li>
+        <li>
+          <select
+            #langselect
+            (change)="translate.use(langselect.value)"
+            name="lang"
+            id="Lang"
+          >
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang">
+              {{ lang }}
+            </option>
+          </select>
         </li>
       </ul>
     </div>

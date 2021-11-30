@@ -1,4 +1,7 @@
-.contact-me-header h2 {
+#sign-in {
+  height: 100vh;
+}
+#sign-in h2 {
   font-size: 3rem;
   font-weight: 500;
   line-height: 1.2;
@@ -20,12 +23,17 @@
   border-radius: 0;
   color: #000;
 }
-.form-control:focus {
+#sign-in input:focus {
   border-bottom-color: #96bb7c;
   box-shadow: none;
   outline: 0 none;
 }
-.submit-btn {
+label {
+  color: #939393;
+  line-height: 1.6;
+  font-size: 16px;
+}
+.sign-in-btn {
   padding: 15px 30px;
   cursor: pointer;
   font-size: 11px;
@@ -37,25 +45,4 @@
   border-color: #96bb7c;
   color: #fff;
   margin: 0px 10px 0px 0px;
-}
-label {
-  color: #939393;
-  line-height: 1.6;
-
-  font-size: 16px;
-}
-.form-group textarea {
-  height: auto;
-}
-.contact-info-wrapper {
-  margin-left: auto;
-}
-.contact-info-header {
-  font-size: 1.25rem;
-}
-.contact-info-icon {
-  margin-right: 0.5rem;
-}
-.contact-info-body li a {
-  color: #96bb7c !important;
 }

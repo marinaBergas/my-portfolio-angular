@@ -20,7 +20,19 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { BlogComponent } from './components/blog/blog.component';
-
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import { ManageBlogsComponent } from './components/admin/manage-blogs/manage-blogs.component';
+import { ManageCategoriesComponent } from './components/admin/manage-categories/manage-categories.component';
+import { ManagePagesComponent } from './components/admin/manage-pages/manage-pages.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +48,13 @@ import { BlogComponent } from './components/blog/blog.component';
     FooterComponent,
     ContactMeComponent,
     BlogComponent,
+    SignInComponent,
+    AdminDashboardComponent,
+    AdminComponent,
+    ManageBlogsComponent,
+    ManageCategoriesComponent,
+    ManagePagesComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +64,14 @@ import { BlogComponent } from './components/blog/blog.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FontAwesomeModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
