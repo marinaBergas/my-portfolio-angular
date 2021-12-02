@@ -27,6 +27,8 @@ export class PortfolioComponent implements OnInit {
   }
   allHandle() {
     this.projectList = this.projectService.projectList;
+    
+    console.log('gg',this.projectList)
   }
   typeReactHandle() {
     this.projectList = this.projectService.projectList;

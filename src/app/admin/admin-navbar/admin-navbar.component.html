@@ -1,0 +1,32 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light mb-5 fixed-top"
+>
+<div class="container">
+    <a class="navbar-brand mr-auto">
+      <p [routerLink]="['/']" class="d-block text-center logo">MS</p>
+    </a>
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    [attr.aria-expanded]="!navbarCollapsed"
+    (click)="navbarCollapsed = !navbarCollapsed"
+  >
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+  class="collapse navbar-collapse justify-content-center" 
+  [ngbCollapse]="navbarCollapsed"
+  id="navbarSupportedContent"
+>
+</div>
+</div>
+</nav>
+<ul>
+    <li><a routerLink="./"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ></a></li>
+    <li><a [routerLink]="['/sign-in']">Logout</a></li>
+</ul>

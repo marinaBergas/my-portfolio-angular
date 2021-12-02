@@ -7,20 +7,24 @@ import { throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  serverUrl = 'https://oposerver.herokuapp.com/user/add';
+  serverUrl = 'https://oposerver.herokuapp.com/user/login';
   errorData: {} = {};
   constructor(private http: HttpClient) {}
+  redirectUrl: string='';
   login(username: string, password: string) {
     return this.http
-      .post<any>(`${this.serverUrl}/api/login`, {
+      .post<any>(`${this.serverUrl}`, {
         username: username,
         password: password,
       })
       .pipe(
-        map((user) => {
-          if (user && user.token) {
+        map((user ) => {
+          console.log("dd",user.user.role)
+
+          if (user&&user.user.role==="admin") {
             localStorage.setItem('currentUser', JSON.stringify(user));
           }
+
         }),
         catchError(this._handleError)
       );

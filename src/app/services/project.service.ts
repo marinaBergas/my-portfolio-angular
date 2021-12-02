@@ -67,7 +67,9 @@ export class ProjectService {
     this.http.get(this._url).subscribe((data) => {
       this._projectList = data;
     });
+   
   }
+
   public get projectList(): Project[] {
     return this._projectList;
   }

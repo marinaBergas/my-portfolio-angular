@@ -23,17 +23,36 @@ import { BlogComponent } from './components/blog/blog.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { AdminComponent } from './components/admin/admin/admin.component';
-import { ManageBlogsComponent } from './components/admin/manage-blogs/manage-blogs.component';
-import { ManageCategoriesComponent } from './components/admin/manage-categories/manage-categories.component';
-import { ManagePagesComponent } from './components/admin/manage-pages/manage-pages.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { AdminModule } from './admin/admin.module';
+import { LoginModule } from './login/login.module';
+import { httpInceptorProviders } from './http-interceptors';
+import { ReactiveFormsModule } from '@angular/forms';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPageScrollCoreModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    AdminModule,
+    LoginModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    
+  ],
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -48,32 +67,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ContactMeComponent,
     BlogComponent,
-    SignInComponent,
-    AdminDashboardComponent,
-    AdminComponent,
-    ManageBlogsComponent,
-    ManageCategoriesComponent,
-    ManagePagesComponent,
-    LoginComponent,
+
+
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    NgxPageScrollCoreModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
-    FontAwesomeModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-  ],
-  providers: [],
+  providers: [httpInceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

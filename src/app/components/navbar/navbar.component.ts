@@ -1,9 +1,6 @@
 import {
   Component,
-  Output,
-  EventEmitter,
-  HostListener,
-  Inject,
+ 
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -32,7 +29,6 @@ export class NavbarComponent {
     (() => {
       let nav = document.getElementById('navbar') as HTMLElement;
       let logo = document.querySelector('.logo') as HTMLElement;
-
       window.addEventListener('scroll', () => {
         if (window.scrollY > 35) {
           this.scrollNavbar = true;
