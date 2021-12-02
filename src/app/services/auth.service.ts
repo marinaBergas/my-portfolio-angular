@@ -19,7 +19,6 @@ export class AuthService {
       })
       .pipe(
         map((user ) => {
-          console.log("dd",user.user.role)
 
           if (user&&user.user.role==="admin") {
             localStorage.setItem('currentUser', JSON.stringify(user));

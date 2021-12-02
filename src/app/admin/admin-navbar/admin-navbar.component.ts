@@ -7,18 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavbarComponent implements OnInit {
   public navbarCollapsed = true;
-  public scrollNavbar: boolean = false;
+  public scrollNavbar: boolean = true;
   public activeLink: string = '';
   constructor() { 
 
-  }
 
-  ngOnInit(): void {
   }
-  
   ngAfterContentInit() {
     (() => {
-      let nav = document.getElementById('navbar') as HTMLElement;
+      let nav = document.getElementById('admin-navbar') as HTMLElement;
       let logo = document.querySelector('.logo') as HTMLElement;
       window.addEventListener('scroll', () => {
         if (window.scrollY > 35) {
@@ -31,8 +28,12 @@ export class AdminNavbarComponent implements OnInit {
           logo.classList.remove('logo-dark-color');
         }
       });
-      console.log('Listner added');
     })();
   }
+
+  ngOnInit(): void {
+  }
+  
+
 
 }

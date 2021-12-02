@@ -22,11 +22,10 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
 import { BlogComponent } from './components/blog/blog.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { LoginModule } from './login/login.module';
-import { httpInceptorProviders } from './http-interceptors';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -70,7 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 
   ],
-  providers: [httpInceptorProviders],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
