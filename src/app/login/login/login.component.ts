@@ -9,41 +9,40 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-submitted=false;
-error:{}={};
-loginError:string='';
+  submitted = false;
+  error: {} = {};
+  loginError: string = '';
   loginForm: FormGroup;
-  constructor(private fb:FormBuilder,private router:Router,private authService:AuthService) { 
-    this.loginForm=this.fb.group({
-      username:['',Validators.required],
-      password:['',Validators.required]
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
-    
+
     this.authService.logout();
   }
-  get username(){
+  get username() {
     return this.loginForm.get('username')
   }
-  get password(){
+  get password() {
     return this.loginForm.get('password');
   }
-  onSubmit(){
-    this.submitted=true;
-    console.log("ff",this.username?.value,this.password?.value)
-    this.authService.login(this.username?.value,this.password?.value).subscribe((data)=>{
-      if(this.authService.isLoggedIn()){
-        const redirect =  this.authService.redirectUrl?this.authService.redirectUrl:'/admin/dashboard';
+  onSubmit() {
+    this.submitted = true;
+    this.authService.login(this.username?.value, this.password?.value).subscribe((data) => {
+      if (this.authService.isLoggedIn()) {
+        const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin/dashboard';
         this.router.navigate([redirect]);
-      }else{
-        this.loginError='username or password is incorrect .'
+      } else {
+        this.loginError = 'username or password is incorrect .'
       }
     },
-    error=>this.error=error)
+      error => this.error = error)
   }
-get userControls(){
-  return this.loginForm.controls
-}
+  get userControls() {
+    return this.loginForm.controls
+  }
 }

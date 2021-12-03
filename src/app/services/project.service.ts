@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { ProjectType } from '../models/enums';
 import { Project } from '../models/interfaces';
-
+import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -62,15 +63,43 @@ export class ProjectService {
 
   public test = [];
   private _projectList: any;
-  public _url = 'https://oposerver.herokuapp.com/project/list';
+  public _urlListProject = 'https://oposerver.herokuapp.com/project/list';
+  public _urlAddProject = 'https://oposerver.herokuapp.com/project/add';
+  errorData: {} = {};
+
   constructor(private http: HttpClient) {
-    this.http.get(this._url).subscribe((data) => {
+    this.http.get(this._urlListProject).subscribe((data) => {
       this._projectList = data;
     });
-   
+
+
   }
 
   public get projectList(): Project[] {
     return this._projectList;
+  }
+  addProject(projectsTitle: string, projectDescription: string) {
+    return this.http.post<any>(`${this._urlAddProject}`, {
+      projectTitle: projectsTitle,
+      projectDescription: projectDescription
+    }).pipe(catchError(this._handleError))
+  }
+  private _handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.log(
+        `Backend returned code ${error.status}` + `bode was : ${error.error}`
+      );
+    }
+    this.errorData = {
+      errorTitle: 'Oops! Request for document failed',
+      errorDesc: 'Something bad happened. Please try again later.',
+    };
+    return throwError(this.errorData);
   }
 }

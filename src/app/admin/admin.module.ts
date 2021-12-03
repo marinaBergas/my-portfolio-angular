@@ -6,20 +6,23 @@ import { AdminComponent } from './admin/admin.component';
 import { ManageProjectsComponent } from './manage-projects/manage-projects.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [AdminComponent,AdminDashboardComponent,ManageProjectsComponent, AdminNavbarComponent],
+  declarations: [AdminComponent,AdminDashboardComponent,ManageProjectsComponent, AdminNavbarComponent, AddNewProjectComponent],
   imports: [
     AdminRoutingModule,
     NgbModule,
     NgbModalModule,
    CommonModule,
-   FontAwesomeModule
+   FontAwesomeModule,
+   ReactiveFormsModule,
+
   ]
 })
 export class AdminModule { }
