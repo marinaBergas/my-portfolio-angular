@@ -8,26 +8,45 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./add-new-project.component.css']
 })
 export class AddNewProjectComponent implements OnInit {
- newProjectForm:FormGroup;
-  constructor(private fb :FormBuilder,private projectService:ProjectService) { 
-    this.newProjectForm=this.fb.group({
-      projectTitle:['',Validators.required],
-      description:['',Validators.required],
-      projectImage:['',Validators.required]
+  newProjectForm: FormGroup;
+  constructor(private fb: FormBuilder, private projectService: ProjectService) {
+    this.newProjectForm = this.fb.group({
+      projectTitle: ['', Validators.required],
+      description: ['', Validators.required],
+      projectImage: ['', Validators.required],
+      projectType: ['', Validators.required],
+      projectUrl:['',Validators.required],
+      logoImg: ['']
     })
   }
-  get projectTitle(){
+  get projectTitle() {
     return this.newProjectForm.get('projectTitle')
   }
-  get description(){
+  get description() {
     return this.newProjectForm.get('description')
   }
-  get projectImage(){
+  get projectImage() {
     return this.newProjectForm.get('projectImage')
   }
+  get projectType() {
+    return this.newProjectForm.get('projectType')
+  }
+  get logoImg() {
+    return this.newProjectForm.get('logoImg')
+  }
+  get projectUrl() {
+    return this.newProjectForm.get('projectUrl')
+  }
+  get projectControls() {
+    return this.newProjectForm.controls
+  }
+  
   ngOnInit(): void {
   }
-  onSubmit(){
-    this.projectService.addProject(this.projectTitle?.value,this.description?.value,this.projectImage?.value)
+
+  onSubmit() {
+    this.projectService.addProject(this.projectTitle?.value, this.description?.value, this.projectImage?.value, this.projectType?.value,this.logoImg?.value,this.projectUrl?.value).subscribe((data)=>{
+      console.log(data)
+    },      error => error)
   }
 }

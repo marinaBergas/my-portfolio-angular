@@ -62,27 +62,25 @@ export class ProjectService {
   // ];
 
   public test = [];
-  private _projectList: any;
-  public _urlListProject = 'https://oposerver.herokuapp.com/project/list';
-  public _urlAddProject = 'https://oposerver.herokuapp.com/project/add';
+  public urlListProject = 'https://oposerver.herokuapp.com/project/list';
+  public urlAddProject = 'https://oposerver.herokuapp.com/project/add';
   errorData: {} = {};
 
   constructor(private http: HttpClient) {
-    this.http.get(this._urlListProject).subscribe((data) => {
-      this._projectList = data;
-    });
-
 
   }
-
-  public get projectList(): Project[] {
-    return this._projectList;
-  }
-  addProject(projectsTitle: string, projectDescription: string,projectImage:string) {
-    return this.http.post<any>(`${this._urlAddProject}`, {
+getProjectList(): Observable<Project[]> {
+  return this.http.get<Project[]>(this.urlListProject)
+}
+ 
+  addProject(projectsTitle: string, projectDescription: string,projectImage:string,projectType:string,logoImg:string,projectUrl:string) {
+    return this.http.post<any>(`${this.urlAddProject}`, {
       title: projectsTitle,
       description: projectDescription,
-      imgscreenshot:projectImage
+      imgscreenshot:projectImage,
+      projectType:projectType,
+      logoImg:logoImg,
+      projectUrl:projectUrl
     }).pipe(catchError(this._handleError))
   }
   private _handleError(error: HttpErrorResponse) {

@@ -12,7 +12,7 @@
                       <div class="form-group">
                           <input type="text" formControlName="username" class="form-control" placeholder="Username" required>
                           <div *ngIf="userControls.username.invalid && (userControls.username.dirty || userControls.username.touched)" class="error">
-                            <div *ngIf="userControls.username.errors">
+                            <div *ngIf="userControls.username.errors" class="alert alert-danger">
                               Username is required.
                             </div>
                           </div>
