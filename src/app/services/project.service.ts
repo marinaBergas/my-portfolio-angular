@@ -78,10 +78,11 @@ export class ProjectService {
   public get projectList(): Project[] {
     return this._projectList;
   }
-  addProject(projectsTitle: string, projectDescription: string) {
+  addProject(projectsTitle: string, projectDescription: string,projectImage:string) {
     return this.http.post<any>(`${this._urlAddProject}`, {
-      projectTitle: projectsTitle,
-      projectDescription: projectDescription
+      title: projectsTitle,
+      description: projectDescription,
+      imgscreenshot:projectImage
     }).pipe(catchError(this._handleError))
   }
   private _handleError(error: HttpErrorResponse) {

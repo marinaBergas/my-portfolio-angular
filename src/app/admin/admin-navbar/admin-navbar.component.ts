@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -9,9 +10,7 @@ export class AdminNavbarComponent implements OnInit {
   public navbarCollapsed = true;
   public scrollNavbar: boolean = true;
   public activeLink: string = '';
-  constructor() { 
-
-
+  constructor(private authService:AuthService) { 
   }
   ngAfterContentInit() {
     (() => {
@@ -34,6 +33,7 @@ export class AdminNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  get isLoggedIn() { return this.authService.isLoggedIn(); }
 
 
 }
