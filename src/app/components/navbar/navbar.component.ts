@@ -78,6 +78,11 @@ export class NavbarComponent {
     this.activeLink = 'signIn';
     this.router.navigate(['sign-in']);
   }
+  toLogOut(){
+    this.activeLink = 'logOut';
+   
+  }
+
   get isLoggedIn() { return this.authService.isLoggedIn(); }
 
   ngOnInit(): void {}

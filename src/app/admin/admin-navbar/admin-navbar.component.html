@@ -8,14 +8,14 @@
       [attr.aria-expanded]="!navbarCollapsed" (click)="navbarCollapsed = !navbarCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" [ngbCollapse]="navbarCollapsed">
+    <div class="collapse navbar-collapse justify-content-end" [ngbCollapse]="navbarCollapsed">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0 p-2" [class]="navbarCollapsed ? '' : 'navbarItemsCollapsed'">
         <li class="nav-item">
           <a class="nav-link" [ngClass]="
          scrollNavbar
           ? 'nav-link nav-link-dark-color '
           : 'nav-link'
-      ">my profile</a>
+      " [routerLink]="['/']">my profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [ngClass]="
@@ -32,7 +32,3 @@
 
   </div>
 </nav>
-<!-- <ul>
-    <li><a routerLink="./"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ></a></li>
-    <li><a [routerLink]="['/sign-in']">Logout</a></li>
-</ul> -->

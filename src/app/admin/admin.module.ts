@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProjectsTableComponent } from './projects-table/projects-table.component';
 
 
 
 @NgModule({
-  declarations: [AdminComponent,AdminDashboardComponent,ManageProjectsComponent, AdminNavbarComponent, AddNewProjectComponent],
+  declarations: [AdminComponent,AdminDashboardComponent,ManageProjectsComponent, AdminNavbarComponent, AddNewProjectComponent, ProjectsTableComponent],
   imports: [
     AdminRoutingModule,
     NgbModule,

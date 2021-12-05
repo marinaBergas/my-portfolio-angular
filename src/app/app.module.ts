@@ -26,6 +26,7 @@ import { AdminModule } from './admin/admin.module';
 import { LoginModule } from './login/login.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -50,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    
+
   ],
   declarations: [
     AppComponent,
@@ -66,10 +67,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ContactMeComponent,
     BlogComponent,
-
+    ProjectDetailsComponent
 
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

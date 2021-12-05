@@ -70,7 +70,7 @@ export class ProjectService {
   constructor(private http: HttpClient) {
 
   }
-  getProjectList(): Observable<Project[]> {
+  public getProjectList(): Observable<Project[]> {
     return this.http.get<Project[]>(`${this._Url}/${this._endpointList}`)
   }
 

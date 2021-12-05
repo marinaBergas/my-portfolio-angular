@@ -26,7 +26,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   onClickHandle(project: any) {
-    this.route.navigate(['portfolio', { id: project.id }]);
+    this.route.navigate(['/portfolio',  project._id ]);
   }
   allHandle() {
     this.projectService.getProjectList().subscribe((data)=>{

@@ -1,159 +1,101 @@
-<nav
-  class="navbar navbar-expand-lg navbar-light bg-light mb-5 fixed-top"
-  id="navbar"
->
+<nav class="navbar navbar-expand-lg navbar-light mb-5 fixed-top" id="navbar">
   <div class="container">
     <a class="navbar-brand mr-auto">
       <p [routerLink]="['/']" class="d-block text-center logo">MS</p>
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      [attr.aria-expanded]="!navbarCollapsed"
-      (click)="navbarCollapsed = !navbarCollapsed"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      [attr.aria-expanded]="!navbarCollapsed" (click)="navbarCollapsed = !navbarCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div
-      class="collapse navbar-collapse justify-content-center"
-      [ngbCollapse]="navbarCollapsed"
-      id="navbarSupportedContent"
-    >
-      <ul
-        class="navbar-nav ml-auto mb-2 mb-lg-0 p-2"
-        [ngClass]="navbarCollapsed ? '' : 'navbarItemsCollapsed'"
-      >
+    <div class="collapse navbar-collapse justify-content-center" [ngbCollapse]="navbarCollapsed"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 p-2" [ngClass]="navbarCollapsed ? '' : 'navbarItemsCollapsed'">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            aria-current="page"
-            routerLink=""
-            (click)="toHome()"
-            [ngClass]="
+          <a class="nav-link" aria-current="page" routerLink="" (click)="toHome()" [ngClass]="
               scrollNavbar && activeLink === 'home'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.HOMELINK" | translate }}</a
-          >
-        </li>       
+            ">{{ "NAVBAR.HOMELINK" | translate }}</a>
+        </li>
         <li class="nav-item">
-          <a
-            (click)="toAbout()"
-            routerLinkActive="active"
-            [ngClass]="
+          <a (click)="toAbout()" routerLinkActive="active" [ngClass]="
               scrollNavbar && activeLink === 'about'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.ABOUTLINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.ABOUTLINK" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a
-            (click)="toPortfolio()"
-            [ngClass]="
+          <a (click)="toPortfolio()" [ngClass]="
               scrollNavbar && activeLink === 'pottfolio'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.PORTFOLIOLINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.PORTFOLIOLINK" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a
-            (click)="toServices()"
-            [ngClass]="
+          <a (click)="toServices()" [ngClass]="
               scrollNavbar && activeLink === 'services'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? ' nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.SERVICELINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.SERVICELINK" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            (click)="toResume()"
-            [ngClass]="
+          <a class="nav-link" (click)="toResume()" [ngClass]="
               scrollNavbar && activeLink === 'resume'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.RESUMELINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.RESUMELINK" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a
-            (click)="toBlog()"
-            [ngClass]="
+          <a (click)="toBlog()" [ngClass]="
               scrollNavbar && activeLink === 'blog'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.BLOGLINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.BLOGLINK" | translate }}</a>
         </li>
         <li class="nav-item">
-          <a
-            (click)="toContact()"
-            [ngClass]="
+          <a (click)="toContact()" [ngClass]="
               scrollNavbar && activeLink === 'contact'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.CONTACTLINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.CONTACTLINK" | translate }}</a>
         </li>
-        <li class="nav-item"  *ngIf="!isLoggedIn">
-          <a
-            (click)="toSignIn()"
-            [routerLink]="['sign-in']"
-            [ngClass]="
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a (click)="toSignIn()" [routerLink]="['sign-in']" [ngClass]="
               scrollNavbar && activeLink === 'signIn'
                 ? 'nav-link nav-link-dark-color active'
                 : scrollNavbar
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
-            "
-            >{{ "NAVBAR.SIGNINLINK" | translate }}</a
-          >
+            ">{{ "NAVBAR.SIGNINLINK" | translate }}</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
-          <a routerLink="/sign-in" [ngClass]="
-          scrollNavbar && activeLink === 'signIn'
+          <a routerLink="/sign-in" (click)="toLogOut()" [ngClass]="
+          scrollNavbar && activeLink === 'logOut'
             ? 'nav-link nav-link-dark-color active'
             : scrollNavbar
             ? 'nav-link nav-link-dark-color '
             : 'nav-link'
         ">Logout</a>
         </li>
-        <li>
-          <select
-            #langselect
-            (change)="translate.use(langselect.value)"
-            name="lang"
-            id="Lang"
-          >
+        <li >
+          <select #langselect (change)="translate.use(langselect.value)" name="lang" [ngClass]="scrollNavbar
+          ? 'nav-link nav-link-dark-color '
+          : 'nav-link'" id="Lang">
             <option *ngFor="let lang of translate.getLangs()" [value]="lang">
               {{ lang }}
             </option>
