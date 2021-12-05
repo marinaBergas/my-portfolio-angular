@@ -1,0 +1,13 @@
+
+
+.add-new-project{
+    padding: 50px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 30px -2px rgb(0 0 0 / 10%);
+
+}
+@media (max-width: 576px){
+    .add-new-project{
+    padding: 10px 20px;
+}
+}

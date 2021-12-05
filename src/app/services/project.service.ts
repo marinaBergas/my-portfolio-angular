@@ -62,25 +62,26 @@ export class ProjectService {
   // ];
 
   public test = [];
-  public urlListProject = 'https://oposerver.herokuapp.com/project/list';
-  public urlAddProject = 'https://oposerver.herokuapp.com/project/add';
+  private _Url=`https://oposerver.herokuapp.com/project`;
+  private _endpointList = 'list';
+  private _endpointAdd = 'add';
   errorData: {} = {};
 
   constructor(private http: HttpClient) {
 
   }
-getProjectList(): Observable<Project[]> {
-  return this.http.get<Project[]>(this.urlListProject)
-}
- 
-  addProject(projectsTitle: string, projectDescription: string,projectImage:string,projectType:string,logoImg:string,projectUrl:string) {
-    return this.http.post<any>(`${this.urlAddProject}`, {
+  getProjectList(): Observable<Project[]> {
+    return this.http.get<Project[]>(`${this._Url}/${this._endpointList}`)
+  }
+
+  addProject(projectsTitle: string, projectDescription: string, projectImage: string, projectType: string, logoImg: string, projectUrl: string) {
+    return this.http.post<any>(`${this._Url}/${this._endpointAdd}`, {
       title: projectsTitle,
       description: projectDescription,
-      imgscreenshot:projectImage,
-      projectType:projectType,
-      logoImg:logoImg,
-      projectUrl:projectUrl
+      imgscreenshot: projectImage,
+      projectType: projectType,
+      logoImg: logoImg,
+      projectUrl: projectUrl
     }).pipe(catchError(this._handleError))
   }
   private _handleError(error: HttpErrorResponse) {

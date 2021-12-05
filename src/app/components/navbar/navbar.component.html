@@ -124,7 +124,7 @@
             >{{ "NAVBAR.CONTACTLINK" | translate }}</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="!isLoggedIn">
           <a
             (click)="toSignIn()"
             [routerLink]="['sign-in']"
@@ -137,6 +137,15 @@
             "
             >{{ "NAVBAR.SIGNINLINK" | translate }}</a
           >
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a routerLink="/sign-in" [ngClass]="
+          scrollNavbar && activeLink === 'signIn'
+            ? 'nav-link nav-link-dark-color active'
+            : scrollNavbar
+            ? 'nav-link nav-link-dark-color '
+            : 'nav-link'
+        ">Logout</a>
         </li>
         <li>
           <select

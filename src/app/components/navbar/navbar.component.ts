@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,7 @@ export class NavbarComponent {
   // scrollToAbout() {
   //   this.scroll.emit(true);
   // }
-  constructor(public translate: TranslateService, private router: Router) {
+  constructor(public translate: TranslateService, private router: Router,private authService:AuthService) {
     translate.addLangs(['en', 'ar']);
     translate.setDefaultLang('en');
     const browserLang = translate.getBrowserLang();
@@ -77,5 +78,7 @@ export class NavbarComponent {
     this.activeLink = 'signIn';
     this.router.navigate(['sign-in']);
   }
+  get isLoggedIn() { return this.authService.isLoggedIn(); }
+
   ngOnInit(): void {}
 }
