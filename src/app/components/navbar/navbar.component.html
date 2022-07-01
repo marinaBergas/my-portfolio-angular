@@ -8,7 +8,7 @@
       [attr.aria-expanded]="!navbarCollapsed" (click)="navbarCollapsed = !navbarCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" [ngbCollapse]="navbarCollapsed"
+    <div class="collapse navbar-collapse justify-content-lg-end" [ngbCollapse]="navbarCollapsed"
       id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0 p-2" [ngClass]="navbarCollapsed ? '' : 'navbarItemsCollapsed'">
         <li class="nav-item">
@@ -38,7 +38,7 @@
                 : 'nav-link'
             ">{{ "NAVBAR.PORTFOLIOLINK" | translate }}</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a (click)="toServices()" [ngClass]="
               scrollNavbar && activeLink === 'services'
                 ? 'nav-link nav-link-dark-color active'
@@ -46,7 +46,7 @@
                 ? ' nav-link nav-link-dark-color '
                 : 'nav-link'
             ">{{ "NAVBAR.SERVICELINK" | translate }}</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" (click)="toResume()" [ngClass]="
               scrollNavbar && activeLink === 'resume'
@@ -56,7 +56,7 @@
                 : 'nav-link'
             ">{{ "NAVBAR.RESUMELINK" | translate }}</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a (click)="toBlog()" [ngClass]="
               scrollNavbar && activeLink === 'blog'
                 ? 'nav-link nav-link-dark-color active'
@@ -64,7 +64,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             ">{{ "NAVBAR.BLOGLINK" | translate }}</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a (click)="toContact()" [ngClass]="
               scrollNavbar && activeLink === 'contact'

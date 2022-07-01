@@ -40,7 +40,7 @@ export class AddNewProjectComponent implements OnInit {
   get projectControls() {
     return this.newProjectForm.controls
   }
-  
+
   ngOnInit(): void {
   }
 
