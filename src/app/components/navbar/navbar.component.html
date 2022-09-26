@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse justify-content-lg-end" [ngbCollapse]="navbarCollapsed"
       id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0 p-2" [ngClass]="navbarCollapsed ? '' : 'navbarItemsCollapsed'">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="" (click)="toHome()" [ngClass]="
               scrollNavbar && activeLink === 'home'
                 ? 'nav-link nav-link-dark-color active'
@@ -19,7 +19,7 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             ">{{ "NAVBAR.HOMELINK" | translate }}</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a (click)="toAbout()" routerLinkActive="active" [ngClass]="
               scrollNavbar && activeLink === 'about'
@@ -74,7 +74,7 @@
                 : 'nav-link'
             ">{{ "NAVBAR.CONTACTLINK" | translate }}</a>
         </li>
-        <li class="nav-item" *ngIf="!isLoggedIn">
+        <!-- <li class="nav-item" *ngIf="!isLoggedIn">
           <a (click)="toSignIn()" [routerLink]="['sign-in']" [ngClass]="
               scrollNavbar && activeLink === 'signIn'
                 ? 'nav-link nav-link-dark-color active'
@@ -82,8 +82,8 @@
                 ? 'nav-link nav-link-dark-color '
                 : 'nav-link'
             ">{{ "NAVBAR.SIGNINLINK" | translate }}</a>
-        </li>
-        <li class="nav-item" *ngIf="isLoggedIn">
+        </li> -->
+        <!-- <li class="nav-item" *ngIf="isLoggedIn">
           <a routerLink="/sign-in" (click)="toLogOut()" [ngClass]="
           scrollNavbar && activeLink === 'logOut'
             ? 'nav-link nav-link-dark-color active'
@@ -91,7 +91,7 @@
             ? 'nav-link nav-link-dark-color '
             : 'nav-link'
         ">Logout</a>
-        </li>
+        </li> -->
         <li >
           <select #langselect (change)="translate.use(langselect.value)" name="lang" [ngClass]="scrollNavbar
           ? 'nav-link nav-link-dark-color '

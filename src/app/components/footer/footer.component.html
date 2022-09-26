@@ -5,8 +5,11 @@
         <div class="footer-content">
           <h3 class="text-capitalize">about</h3>
           <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.
+            I`m Marina Saber Labeeb,Front End developer with 2 years experience ,
+            I have  studied Front end track  at Information Technology Institute(ITI),
+            I have taken  some courses from Coursera & Mahara (HTML,Css,Sass,Javascript,
+            TypeScript,c++,design pattern,unit test, FrontEnd using angular,React).
+
           </p>
         </div>
         <div class="footer-content">
@@ -16,9 +19,9 @@
               class="social-contacts-list"
               *ngFor="let socialIcon of socialIcons"
             >
-              <a href="#">
+              <a [href]="socialIcon.href">
                 <span>
-                  <fa-icon [icon]="socialIcon" class="instagram"> </fa-icon
+                  <fa-icon [icon]="socialIcon.icon" class="instagram"> </fa-icon
                 ></span>
               </a>
             </li>

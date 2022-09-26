@@ -1,12 +1,11 @@
 export interface Project {
-  _id: string;
+  _id: number;
   title: string;
   description: string;
   logoImg: string;
   imgscreenshot: string;
   url: string;
   projectType: string;
-  __v: number;
 }
 export interface WorkExperiences {
   prevExperience: string;

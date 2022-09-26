@@ -18,12 +18,12 @@
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <li class="text-capitalize" (click)="allHandle()">
+          <li class="text-capitalize" (click)="typeHandle('all')">
             {{ "PORTFOLIO.ALL" | translate }}
           </li>
-          <li class="text-capitalize" (click)="typeReactHandle()">react</li>
-          <li class="text-capitalize" (click)="typeAngularHandle()">angular</li>
-          <li class="text-capitalize" (click)="typeLandinaPageHandle()">
+          <li class="text-capitalize" (click)="typeHandle('react')">react</li>
+          <li class="text-capitalize" (click)="typeHandle('angular')">angular</li>
+          <li class="text-capitalize" (click)="typeHandle('landingPage')">
             landingpage
           </li>
         </ul>
@@ -37,9 +37,8 @@
         "
         data-aos="fade-up"
         data-aos-delay="200"
-        (click)="onClickHandle(project)"
-        *ngFor="let project of projectList"
-       
+        *ngFor="let project of filteredProjectList"
+
       >
         <figure class="w-100 h-100">
           <div class="img-wrapper">

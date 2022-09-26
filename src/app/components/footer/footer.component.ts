@@ -7,6 +7,7 @@ import {
   faLinkedin,
   faDribbble,
   faPinterest,
+  faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import { navigationServiceValues } from '../../models/interfaces';
 import { NavigationService } from '../../services/navigation.service';
@@ -18,12 +19,12 @@ import { OurServiceService } from '../../services/our-service.service';
 })
 export class FooterComponent implements OnInit {
   public socialIcons = [
-    faFacebookF,
-    faInstagram,
-    faTwitter,
-    faLinkedin,
-    faDribbble,
-    faPinterest,
+    {icon:faGithub,href:'https://github.com/marinaBergas'},
+    // faInstagram,
+    // faTwitter,
+    {icon:faLinkedin,href:'https://www.linkedin.com/in/marina-saber-7852bb14a/'},
+    // faDribbble,
+    // faPinterest,
   ];
   public navigations: navigationServiceValues[] = [];
   public ourServiceList: navigationServiceValues[] = [];
