@@ -7,7 +7,8 @@
     "BLOGLINK": "مدونة",
     "RESUMELINK": "السيرة الذاتية",
     "CONTACTLINK": " جهات التواصل",
-    "SIGNINLINK": "الدخول"
+    "SIGNINLINK": "الدخول",
+    "ADMIN":"المسؤل"
   },
   "HEADER": {
     "NAME": "انا مارينا صابر",

@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { ProjectType } from '../models/enums';
 import { Project } from '../models/interfaces';
 import { throwError } from 'rxjs';
+import { FirebaseService } from './firebase.service';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,20 +13,20 @@ export class ProjectService {
 
 
   public test = [];
-  private _Url=`https://oposerver.herokuapp.com/project`;
+  // private _Url=`https://oposerver.herokuapp.com/project`;
   private _endpointList = 'list';
   private _endpointAdd = 'add';
   errorData: {} = {};
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private FBAuth:FirebaseService) {
 
   }
   public getProjectList(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this._Url}/${this._endpointList}`)
+    return this.http.get<Project[]>(`${this.FBAuth.dpUrl}/projects.json`)
   }
 
   addProject(projectsTitle: string, projectDescription: string, projectImage: string, projectType: string, logoImg: string, projectUrl: string) {
-    return this.http.post<any>(`${this._Url}/${this._endpointAdd}`, {
+    return this.http.post<any>(`${this.FBAuth.dpUrl}/projects.json`, {
       title: projectsTitle,
       description: projectDescription,
       imgscreenshot: projectImage,

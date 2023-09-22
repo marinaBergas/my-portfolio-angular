@@ -7,25 +7,27 @@ import { throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  public _url = 'https://oposerver.herokuapp.com/user/login';
+  // public _url = 'https://oposerver.herokuapp.com/user/login';
   errorData: {} = {};
   constructor(private http: HttpClient) { }
   redirectUrl: string = '';
-  login(username: string, password: string) {
-    return this.http
-      .post<any>(`${this._url}`, {
-        username: username,
-        password: password,
-      })
-      .pipe(
-        map((user) => {
-          if (user && user.user.role === "admin") {
-            localStorage.setItem('currentUser', JSON.stringify(user));
-          }
-        }),
-        catchError(this._handleError)
-      );
-  }
+  // login(username: string, password: string) {
+  //   return this.http
+  //     .post<any>(`${this._url}`, {
+  //       username: username,
+  //       password: password,
+  //     })
+  //     .pipe(
+  //       map((user) => {
+  //         if (user && user.user.role === "admin") {
+  //           localStorage.setItem('currentUser', JSON.stringify(user));
+  //         }
+  //       }),
+  //       catchError(this._handleError)
+  //     );
+  // }
+
+
   private _handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

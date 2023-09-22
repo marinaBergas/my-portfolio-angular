@@ -7,11 +7,12 @@
     "BLOGLINK": "Blog",
     "RESUMELINK": "Resume",
     "CONTACTLINK": "Contact",
-    "SIGNINLINK": "Sign-in"
+    "SIGNINLINK": "Sign-in",
+    "ADMIN":"ADMIN"
   },
   "HEADER": {
     "NAME": "I'm Marina Saber",
-    "TITLE": " A Front-end Developer"
+    "TITLE": " A Front-End Developer"
   },
   "ABOUT": {
     "TITLE": "My Bio",

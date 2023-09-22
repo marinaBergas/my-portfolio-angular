@@ -13,57 +13,59 @@ import { ProjectType } from 'src/app/models/enums';
 })
 export class PortfolioComponent implements OnInit {
   // public projectList: Project[] = [];
-  public projectList: Project[] = [
-    {
-      _id: 1,
-      logoImg: `assets/calmaLogo.png`,
-      projectType: ProjectType.react,
-      url: `${'https://marinabergas.github.io/Calma/#/'}`,
-      imgscreenshot: `assets/calmascreenshot.png`,
-      title: 'Calma Psychological Website',
-      description:
-        ' A Psychological booking website built with React, Redux,Material-UI, and Firebase',
-    },
-    {
-      _id: 2,
-      logoImg: ``,
-      projectType: ProjectType.angular,
-      url: `${' https://marinabergas.github.io/shipment-service/'}`,
-      imgscreenshot: `assets/services-screenshots.png`,
-      title: 'Shipment-service',
-      description:
-        'Shipment-services website using react hooks,props ,i18 translate,rest api use react axios,you can check 7234258,6636255,9442984 and other',
-    },
-    {
-      _id: 3,
-      logoImg: ``,
-      projectType: ProjectType.react,
-      url: `${'https://marinabergas.github.io/TodoList/'}`,
-      imgscreenshot: `assets/TodoList-screenshot.png`,
-      title: 'Todo website app',
-      description:
-        'Todo website app using react fake api deploy with github use hooks ,props',
-    },
-    {
-      _id: 4,
-      logoImg: ``,
-      projectType: ProjectType.react,
-      url: `${'https://marinabergas.github.io/post-leave-request/#/'}`,
-      imgscreenshot: `assets/post-leave-request.png`,
-      title: 'Post Leave Request',
-      description: 'post leave request website using,react,hooks,redux',
-    },
-    {
-      _id: 5,
-      logoImg: ``,
-      projectType: ProjectType.landingPage,
-      url: `${'https://marinabergas.github.io/map-feature/#/'}`,
-      imgscreenshot: `assets/school-mapscreenshot.png`,
-      title: 'School map ',
-      description:
-        'react website  using leafletmap library carousel with javascript',
-    },
-  ];
+  // public projectList: Project[] = [
+  //   {
+  //     _id: '1',
+  //     logoImg: `assets/calmaLogo.png`,
+  //     projectType: ProjectType.react,
+  //     url: `${'https://marinabergas.github.io/Calma/#/'}`,
+  //     imgscreenshot: `assets/calmascreenshot.png`,
+  //     title: 'Calma Psychological Website',
+  //     description:
+  //       ' A Psychological booking website built with React, Redux,Material-UI, and Firebase',
+  //   },
+  //   {
+  //     _id:' 2',
+  //     logoImg: ``,
+  //     projectType: ProjectType.angular,
+  //     url: `${' https://marinabergas.github.io/shipment-service/'}`,
+  //     imgscreenshot: `assets/services-screenshots.png`,
+  //     title: 'Shipment-service',
+  //     description:
+  //       'Shipment-services website using react hooks,props ,i18 translate,rest api use react axios,you can check 7234258,6636255,9442984 and other',
+  //   },
+  //   {
+  //     _id: '3',
+  //     logoImg: ``,
+  //     projectType: ProjectType.react,
+  //     url: `${'https://marinabergas.github.io/TodoList/'}`,
+  //     imgscreenshot: `assets/TodoList-screenshot.png`,
+  //     title: 'Todo website app',
+  //     description:
+  //       'Todo website app using react fake api deploy with github use hooks ,props',
+  //   },
+  //   {
+  //     _id: '4',
+  //     logoImg: ``,
+  //     projectType: ProjectType.react,
+  //     url: `${'https://marinabergas.github.io/post-leave-request/#/'}`,
+  //     imgscreenshot: `assets/post-leave-request.png`,
+  //     title: 'Post Leave Request',
+  //     description: 'post leave request website using,react,hooks,redux',
+  //   },
+  //   {
+  //     _id: '5',
+  //     logoImg: ``,
+  //     projectType: ProjectType.landingPage,
+  //     url: `${'https://marinabergas.github.io/map-feature/#/'}`,
+  //     imgscreenshot: `assets/school-mapscreenshot.png`,
+  //     title: 'School map ',
+  //     description:
+  //       'react website  using leafletmap library carousel with javascript',
+  //   },
+  // ];
+  public projectList: Project[] = [];
+
   filteredProjectList: Project[]=[];
   constructor(private projectService: ProjectService, private route: Router,private http: HttpClient) {
 
@@ -74,10 +76,28 @@ export class PortfolioComponent implements OnInit {
     // this.projectService.getProjectList().subscribe((data)=>{
     //   this.projectList = data;
     // });
+    this.getProjects();
     this.filteredProjectList=this.projectList;
 
   }
 
+  getProjects(){
+    this.projectService.getProjectList().subscribe((data)=>{
+      // this.projectList = Object.values(data);
+      for (const key in data) {
+          const element = data[key];
+          this.projectList=[{...element,_id:key }]
+          console.log(this.projectList);
+
+
+      }
+      // data.map(project=>{
+      //   console.log('data',project);
+
+      //   // this.projectList=[...this.projectList,{Object.values(project)}]
+      // })
+    });
+  }
   // onClickHandle(project: any) {
   //   this.route.navigate(['/portfolio',  project._id ]);
   // }

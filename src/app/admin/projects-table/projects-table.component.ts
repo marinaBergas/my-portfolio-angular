@@ -14,9 +14,22 @@ export class ProjectsTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectService.getProjectList().subscribe((data)=>{
-      this.projectList = data;
+      // this.projectList = Object.values(data);
+      for (const key in data) {
+          const element = data[key];
+          this.projectList=[{...element,_id:key }]
+          console.log(element,key);
+
+
+      }
+      // data.map(project=>{
+      //   console.log('data',project);
+
+      //   // this.projectList=[...this.projectList,{Object.values(project)}]
+      // })
     });
   }
+
   preview(project: any) {
     this.route.navigate(['/portfolio',  project._id ]);
   }

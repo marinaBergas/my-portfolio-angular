@@ -36,13 +36,17 @@
             </div>
             <div class="form-group ">
                 <label for="logoImg" class="text-capitalize">logo img url</label>
-                <input type="text" formControlName="logoImg" class="form-control " id="logoImg"
-                    name="logoImg" />
+                <!-- <input type="text" formControlName="logoImg" class="form-control " id="logoImg"
+                    name="logoImg" /> -->
+                    <input name="logoImg" (change)="uploadLogoImage($event)" formControlName="logoImg" type="file"  class="form-control "
+                    id="logoImg"/>
             </div>
             <div class="form-group ">
                 <label for="projectImage" class="text-capitalize">image url</label>
-                <input type="text" name="projectImage" formControlName="projectImage" class="form-control "
-                    id="projectImage">
+                <input name="projectName" (change)="uploadimage($event)" formControlName="projectImage" type="file"  class="form-control "
+                id="projectImage"/>
+                <!-- <input type="text" name="projectImage" formControlName="projectImage" class="form-control "
+                    id="projectImage"> -->
                 <div *ngIf="projectControls.projectImage.invalid && (projectControls.projectImage.dirty || projectControls.projectImage.touched)"
                     class="error">
                     <div *ngIf="projectControls.projectImage.errors" class="alert alert-danger">
