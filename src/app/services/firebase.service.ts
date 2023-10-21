@@ -55,11 +55,8 @@ export class FirebaseService {
         email,
         password
       );
-      console.log('ss', this.confirmationResult);
       return this.confirmationResult;
     } catch (error) {
-      console.log('ss', error);
-
       throw error;
     }
   }
@@ -107,7 +104,9 @@ export class FirebaseService {
     await getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       this.downloadImageUrl = downloadURL;
     });
-    return this.downloadImageUrl
+    console.log(this.downloadImageUrl);
+
+    return this.downloadImageUrl;
   }
 
 }

@@ -40,8 +40,9 @@
         *ngFor="let project of filteredProjectList"
 
       >
-        <figure class="w-100 h-100">
-          <div class="img-wrapper">
+      <a href={{project.projectUrl}} class="d-block">
+        <figure class="w-100 h-100"   >
+          <div class="img-wrapper" >
             <img
               src="{{ project.imgscreenshot }}"
               alt="project"
@@ -49,13 +50,15 @@
             />
           </div>
 
-          <div class="overLay-content">
+
+          <div class="overLay-content" >
             <h3>{{ project.title }}</h3>
             <p class="text-capitalize project-filteration">
               {{ project.projectType }}
             </p>
           </div>
         </figure>
+      </a>
       </div>
     </div>
   </div>

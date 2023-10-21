@@ -83,12 +83,14 @@ export class PortfolioComponent implements OnInit {
 
   getProjects(){
     this.projectService.getProjectList().subscribe((data)=>{
+      console.log(data);
+
       // this.projectList = Object.values(data);
       for (const key in data) {
           const element = data[key];
-          this.projectList=[{...element,_id:key }]
+          this.projectList=[...this.projectList,{...element,_id:key }];
           console.log(this.projectList);
-
+          this.filteredProjectList=[...this.projectList];
 
       }
       // data.map(project=>{

@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   logoImg: string;
   imgscreenshot: string;
-  url: string;
+  projectUrl: string;
   projectType: string;
 }
 export interface WorkExperiences {

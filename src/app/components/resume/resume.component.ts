@@ -21,7 +21,7 @@ export class ResumeComponent implements OnInit {
   public experiences: WorkExperiences[] = [
     {
       prevExperience: 'Front end developer',
-      workPlace: 'orange labs',
+      workPlace: 'orange innovation',
       location: 'cairo',
       period: 'full time',
       periodCalenderStart: 'november2021',
